@@ -31,10 +31,15 @@ from pyrogram import (
 
 buttons = [
     [
-        InlineKeyboardButton('⚡️ Nhóm', url='https://t.me/yeu69'),
-        InlineKeyboardButton('🧩 Join Here', url='https://t.me/joinchat/BvHYpFNhr9o1M2Y9'),
-    ]
-    ]
+     InlineKeyboardButton('🆘FIX LỖI BỊ CHẶN IPORN🆘', url='https://t.me/mokhoaND'),
+    ],
+    
+    [
+        InlineKeyboardButton('⚡️ NÔNG DÂN TQ 🔞', url='https://t.me/nongdan8'),
+        InlineKeyboardButton('🧩 BÚN RIÊU 🔞', url='https://t.me/+NQ7LbhX62eFjZjM1'),
+    ],[
+     InlineKeyboardButton('🔰 TẢI APP XEM LIVE 🔰', url='https://68live7.com/'),
+    ]]
 def get_cmd(dur):
     if dur:
         return "/play"
@@ -58,7 +63,7 @@ async def search(client, query):
         await client.answer_inline_query(
             query.id,
             results=answers,
-            switch_pm_text=("Tìm kiếm video trên youtube"),
+            switch_pm_text=("Lấy thêm link nhóm víp"),
             switch_pm_parameter="help",
             cache_time=0
         )
@@ -87,7 +92,7 @@ async def search(client, query):
             await query.answer(
                 results=answers,
                 cache_time=0,
-                switch_pm_text=("Nothing found"),
+                switch_pm_text=("Lấy thêm link nhóm víp"),
                 switch_pm_parameter="",
             )
 
