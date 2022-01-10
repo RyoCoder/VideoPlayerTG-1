@@ -41,7 +41,7 @@ from utils import (
 
 admin_filter=filters.create(is_admin)   
 
-@Client.on_message(filters.command(["playlist", f"playlist@{Config.BOT_USERNAME}"]) & chat_filter)
+@Client.on_message(filters.command(["plist", f"plist@{Config.BOT_USERNAME}"]) & chat_filter)
 async def player(client, message):
     if not Config.CALL_STATUS:
         await message.reply_text(
@@ -68,7 +68,7 @@ async def player(client, message):
         )
     await delete_messages([message])
 
-@Client.on_message(filters.command(["skip", f"skip@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
+@Client.on_message(filters.command(["boqua", f"boqua@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def skip_track(_, m: Message):
     msg=await m.reply('trying to skip from queue..')
     if not Config.CALL_STATUS:
@@ -112,7 +112,7 @@ async def skip_track(_, m: Message):
         Config.msg['player'] = await msg.edit(pl, disable_web_page_preview=True, reply_markup=await get_buttons())
         await delete_messages([m])
 
-@Client.on_message(filters.command(["pause", f"pause@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
+@Client.on_message(filters.command(["dunglai", f"dunglai@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def pause_playing(_, m: Message):
     if not Config.CALL_STATUS:
         await m.reply_text(
@@ -131,7 +131,7 @@ async def pause_playing(_, m: Message):
     await delete_messages([m, k])
     
 
-@Client.on_message(filters.command(["resume", f"resume@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
+@Client.on_message(filters.command(["tieptuc", f"tieptuc@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def resume_playing(_, m: Message):
     if not Config.CALL_STATUS:
         await m.reply_text(
@@ -151,7 +151,7 @@ async def resume_playing(_, m: Message):
     
 
 
-@Client.on_message(filters.command(['volume', f"volume@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
+@Client.on_message(filters.command(['amluong', f"amluong@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def set_vol(_, m: Message):
     if not Config.CALL_STATUS:
         await m.reply_text(
@@ -324,7 +324,7 @@ async def seek_playout(client, m: Message):
         await delete_messages([m, k])
 
 
-@Client.on_message(filters.command(["settings", f"settings@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
+@Client.on_message(filters.command(["caidat", f"caidat@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def settings(client, m: Message):
     await m.reply(f"Configure Your VCPlayer Settings Here. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await settings_panel(), disable_web_page_preview=True)
     await delete_messages([m])
